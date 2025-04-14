@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Brain, MessageSquare, Database, Settings, Shield, LogOut, User, Lock } from "lucide-react"
+import { Brain, MessageSquare, Database, Settings, Shield, LogOut, User, Lock, Bot } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -37,6 +37,11 @@ export function AppSidebar() {
       title: "Memories",
       icon: Database,
       href: "/memories",
+    },
+    {
+      title: "Agents",
+      icon: Bot,
+      href: "/agents",
     },
     {
       title: "Access Control",

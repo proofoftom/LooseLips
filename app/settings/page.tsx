@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -6,9 +9,12 @@ import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Lock, Key, Database, Cloud, RefreshCw, Eye, Download } from "lucide-react"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Shield, Lock, Key, Database, Cloud, RefreshCw, Eye, Download, Brain, Sparkles } from "lucide-react"
 
 export default function SettingsPage() {
+  const [defaultStorage, setDefaultStorage] = useState("ipfs")
+
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <div className="flex items-center justify-between">
@@ -140,21 +146,69 @@ export default function SettingsPage() {
           <Card>
             <CardHeader>
               <CardTitle>Storage Settings</CardTitle>
-              <CardDescription>Configure IPFS/Filecoin storage settings</CardDescription>
+              <CardDescription>Configure decentralized storage settings</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <Label className="text-base">Storage Provider</Label>
-                    <p className="text-sm text-muted-foreground">Decentralized storage on IPFS/Filecoin</p>
+                <Label>Default Storage Provider</Label>
+                <RadioGroup value={defaultStorage} onValueChange={setDefaultStorage} className="space-y-3">
+                  <div className="flex items-start space-x-2 rounded-md border p-3">
+                    <RadioGroupItem value="ipfs" id="ipfs" className="mt-1" />
+                    <div className="flex-1">
+                      <Label htmlFor="ipfs" className="flex items-center">
+                        <Database className="mr-2 h-4 w-4 text-blue-500" />
+                        IPFS/Filecoin
+                      </Label>
+                      <p className="text-sm text-muted-foreground">
+                        Decentralized storage on the InterPlanetary File System and Filecoin network
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <Badge variant="outline">Permanent storage</Badge>
+                        <Badge variant="outline">Content-addressed</Badge>
+                        <Badge variant="outline">Decentralized</Badge>
+                      </div>
+                    </div>
                   </div>
-                  <Badge variant="outline" className="ml-2">
-                    <Database className="mr-1 h-3 w-3" />
-                    IPFS/Filecoin
-                  </Badge>
-                </div>
+
+                  <div className="flex items-start space-x-2 rounded-md border p-3">
+                    <RadioGroupItem value="recall" id="recall" className="mt-1" />
+                    <div className="flex-1">
+                      <Label htmlFor="recall" className="flex items-center">
+                        <Brain className="mr-2 h-4 w-4 text-green-500" />
+                        Recall Network
+                      </Label>
+                      <p className="text-sm text-muted-foreground">
+                        Unstoppable intelligence network for storing, sharing and trading knowledge on-chain
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <Badge variant="outline">Agent-centric</Badge>
+                        <Badge variant="outline">Knowledge trading</Badge>
+                        <Badge variant="outline">On-chain storage</Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-2 rounded-md border p-3">
+                    <RadioGroupItem value="storacha" id="storacha" className="mt-1" />
+                    <div className="flex-1">
+                      <Label htmlFor="storacha" className="flex items-center">
+                        <Sparkles className="mr-2 h-4 w-4 text-purple-500" />
+                        Storacha AI
+                      </Label>
+                      <p className="text-sm text-muted-foreground">
+                        Self-sovereign data for multi-agent deployment with enhanced privacy
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <Badge variant="outline">Multi-agent optimized</Badge>
+                        <Badge variant="outline">Self-sovereign</Badge>
+                        <Badge variant="outline">Privacy-focused</Badge>
+                      </div>
+                    </div>
+                  </div>
+                </RadioGroup>
               </div>
+
+              <Separator className="my-4" />
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
