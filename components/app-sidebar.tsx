@@ -48,6 +48,11 @@ export function AppSidebar() {
       icon: Shield,
       href: "/access",
     },
+    // {
+    //   title: "Analytics",
+    //   icon: Brain,
+    //   href: "/analytics",
+    // },
     {
       title: "Settings",
       icon: Settings,
