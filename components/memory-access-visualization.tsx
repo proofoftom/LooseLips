@@ -683,8 +683,8 @@ export function MemoryAccessVisualization() {
           className='w-[400px]'
         >
           <TabsList className='grid w-full grid-cols-3'>
-            <TabsTrigger value='network'>By Category</TabsTrigger>
-            <TabsTrigger value='heatmap'>Access Heatmap</TabsTrigger>
+            <TabsTrigger value='network'>Heatmap</TabsTrigger>
+            <TabsTrigger value='heatmap'>Read/Write</TabsTrigger>
             <TabsTrigger value='storage'>Storage</TabsTrigger>
           </TabsList>
         </Tabs>
