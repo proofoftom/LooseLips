@@ -2,12 +2,17 @@
 
 LooseLips is a secure AI memory application for storing secret memories that only the user and their authorized agents can access. It provides end-to-end encryption, decentralized storage, and granular access control for your sensitive data.
 
+![LooseLips Analytics Dashboard](./public/images/screenshot2.png)
+
+![LooseLips Create Storacha Agent](./public/images/screenshot4.png)
+
 ## Encode UI Blueprints Hackathon Submission
 
-![LooseLips Dashboard](./public/images/recall-network.png)
+[Demo](https://loose-lips.vercel.app/)
 
-Presentation Video: [LooseLips Presentation Video](./public/videos/looselips-presentation.mp4)
-Slides: [LooseLips Presentation Slides](./public/slides/looselips.pptx)
+[Video](/#coming-soon)
+
+[Slides](/#coming-soon)
 
 ## Features
 
@@ -104,7 +109,7 @@ LooseLips allows you to create and manage AI agents with different access levels
 Each agent can be configured with:
 
 - Custom name and description
-- AI model selection (GPT-4o, Claude 3, etc.)
+- AI model selection (Llama 3.1, DeepSeek, etc.)
 - Storage provider preference
 - Encryption settings
 - Access control conditions
